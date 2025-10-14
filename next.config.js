@@ -2,17 +2,16 @@ import { withPayload } from '@payloadcms/next/withPayload'
 
 import redirects from './redirects.js'
 
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-  remotePatterns: [
-    {
-      hostname: process.env.NEXT_PUBLIC_SERVER_URL.split('https://')[1],
-      protocol: 'https',
-    }
-  ],
-},
+    remotePatterns: [
+      {
+        hostname: process.env.NEXT_PUBLIC_SERVER_URL.split('https://')[1],
+        protocol: 'https',
+      },
+    ],
+  },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
